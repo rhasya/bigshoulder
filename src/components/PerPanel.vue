@@ -1,13 +1,13 @@
 <template>
   <div>
     <div>
-      <span>{{ label }}</span>
+      <span style="font-size: 20px;">{{ label }}</span>
       <span> - </span>
-      <span>{{ amount }}</span>
+      <span style="font-size: 20px;">{{ amount }}</span>
     </div>
-    <div class="border">
+    <div class="border" >
       <span class="info" v-for="(c, i) in coins" :key="coinInfo[i] + '' + percent">
-        {{ `${c} x ${coinInfo[i]}` }}
+        {{ `${c} x ${coinInfo[i]}` }} Coin
       </span>
     </div>
   </div>
@@ -24,7 +24,7 @@ export default {
       return `${this.percent * 100}%`;
     },
     amount() {
-      return this.total * this.percent;
+      return Math.floor(this.total * this.percent);
     },
     coins() {
       let v = this.amount;
@@ -41,6 +41,8 @@ export default {
 <style>
 div.border {
   border: 1px solid gray;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 .info + .info:before {
   content: '|';
