@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1>Calculator</h1>
-    <div>
+    <div style="margin-bottom: 10px;">
       <input type="number" v-model="total" maxlength="4">
     </div>
     <div>
